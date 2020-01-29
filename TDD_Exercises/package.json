@@ -1,0 +1,17 @@
+{
+  "name": "tdd_exercises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --env=node --verbose"
+  },
+  "author": "Lab user",
+  "license": "ISC",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "jest": "^24.1.0"
+  }
+}
