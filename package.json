@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "test": "jest tests --env=node",
+    "start": "node src/app.js"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sj158/shipping-service.git"
@@ -19,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/sj158/shipping-service/issues"
   },
-  "homepage": "https://github.com/sj158/shipping-service#readme"
+  "homepage": "https://github.com/sj158/shipping-service#readme",
+  "devDependencies": {
+    "nock": "^11.7.2",
+    "sinon": "^8.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1"
+  }
 }
