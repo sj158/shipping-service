@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: shipping-service-svc
+  namespace: lab-cnb-24
+  labels:
+    app: shipping-service
+spec:
+  type: NodePort
+  ports:
+    - name: app-port
+      targetPort: app-port
+      port: 3001
+  selector:
+    app: shipping-service
