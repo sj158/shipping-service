@@ -1,3 +1,5 @@
+const { fahrenheit2celcius } = require('./fahrenheit-2-celsius.js');
+
 describe('the fahrenheit-2-celcius canary spec', () => {
   it('shows the infrastructure works', () => {
     expect(true).toBe(true);
@@ -28,9 +30,3 @@ describe('the fahrenheit-2-celcius canary spec', () => {
   });
 
 });
-
-
-
-function fahrenheit2celcius(f) {
-  return (f - 32) * (5/9);
-}
