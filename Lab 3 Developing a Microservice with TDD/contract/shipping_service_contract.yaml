@@ -1,0 +1,47 @@
+swagger: '2.0'
+info:
+  version: 0.0.3
+  title: Shipping Service
+  description: Service to manage shipping information.
+consumes:
+  - application/json
+produces:
+  - application/json
+basePath: /shipping
+paths:
+  /:
+    get:
+      operationId: getShipping
+      description: Get shipping cost for an it by item id and type. Uses query parameters like `?itemId=AAA&type=overnight`
+      tags:
+        - shipping
+      parameters:
+      - name: "itemId"
+        in: "query"
+        description: "ID of an item. Like 'AAA'."
+        required: true
+        type: "string"
+      - name: "type"
+        in: "query"
+        description: "Type of the shipping. Values 'STANDARD' or 'OVERNIGHT'."
+        required: true
+        type: "string"
+        pattern: "[STANDARD|OVERNIGHT]"
+      responses:
+        '200':
+          description: Operation successful
+        '500':
+          description: Failed
+          schema:
+            $ref: '#/definitions/Error'
+
+
+definitions:
+  Error:
+    description: Error message send by the API
+    required:
+      - error
+    properties:
+      error:
+        type: string
+        description: Descriptive error message.

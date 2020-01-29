@@ -1,0 +1,56 @@
+swagger: '2.0'
+info:
+  version: 0.0.1
+  title: Product Service
+  description: Service to manage product information.
+consumes:
+  - application/json
+produces:
+  - application/json
+host: product-service-java.eu-gb.mybluemix.net
+basePath: /products
+schemes: 
+  - http
+paths:
+  /{productCode}:
+    get:
+      description: Get product data by id. Uses path parameter like `products/AAA`
+      tags:
+        - products
+      parameters:
+      - name: "productCode"
+        in: "path"
+        description: "ID of a product. Like 'AAA'."
+        required: true
+        type: "string"
+      responses:
+        '200':
+          description: Product data
+          schema:
+            $ref: '#/definitions/Product'
+        '500':
+          description: Failed
+          schema:
+            $ref: '#/definitions/Error'
+
+
+definitions:
+  Product:
+    description: Product information
+    required:
+      - productId
+    properties:
+      productId:
+        type: string
+        description: product code
+      weightLB:
+        type: integer
+        description: approximate product weight in pounds
+  Error:
+    description: Error message send by the API
+    required:
+      - error
+    properties:
+      error:
+        type: string
+        description: Descriptive error message.
