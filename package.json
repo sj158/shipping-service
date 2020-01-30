@@ -1,12 +1,16 @@
 {
-  "name": "shipping-service",
+  "name": "shipping-service-24",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "jest tests --env=node",
+    "test": "jest tests",
     "start": "node src/app.js"
-},
+  },
+  "engines": {
+    "node": "8.11.3",
+    "npm": "5.6.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sj158/shipping-service.git"
